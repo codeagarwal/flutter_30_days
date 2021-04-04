@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final int days = 20;
+    final int days = 30;
     final String Name = "Mayank Agarwal";
 
     return Scaffold(
@@ -12,9 +12,19 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child:
-            Container(child: Text("Welcome to $days Days of Flutter $Name  ")),
+            Container(child: Text("Welcome to $days Days of Flutter $Name.  ")),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: new Center(
+          child: Text(
+            "Hello this is Drawer.",
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.amber,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
