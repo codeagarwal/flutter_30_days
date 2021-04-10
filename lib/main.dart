@@ -27,11 +27,11 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.aBeeZee().fontFamily,
         ),
         darkTheme: ThemeData(brightness: Brightness.light),
-        initialRoute: "/home",
+        initialRoute: "/",
         routes: {
           "/": (context) => LoginPage(),
           MyRoutes.HomeRoute: (context) => HomePage(),
-          MyRoutes.loginRoute: (context) => LoginPage(),
+          MyRoutes.LoginRoute: (context) => LoginPage(),
         });
   }
 }
