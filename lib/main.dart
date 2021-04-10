@@ -4,6 +4,9 @@ void main() {
   runApp(MyApp());
 }
 
+String days = "30";
+String name = "Mayank Agarwal";
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
       home: Material(
         child: Center(
           child: Container(
-            child: Text("Welcome to 30 Days of Flutter  "),
+            child: Text("Welcome to $days Days of Flutter by $name  "),
           ),
         ),
       ),
