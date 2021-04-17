@@ -3,7 +3,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_app30days/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = "";
+  bool changeButton = false;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -19,7 +27,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 35,
             ),
-            Text("Welcome to MyApp",
+            Text("Welcome $name",
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
@@ -33,9 +41,12 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 children: [
                   TextFormField(
-                    decoration: InputDecoration(
-                        hintText: "Enter UserName", labelText: "UserName"),
-                  ),
+                      decoration: InputDecoration(
+                          hintText: "Enter UserName", labelText: "UserName"),
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      }),
                   TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
@@ -44,18 +55,55 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: 40,
                   ),
-                  ElevatedButton(
-                    child: Text(
-                      "LogIn",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, MyRoutes.HomeRoute);
-                    },
-                    style: TextButton.styleFrom(
-                        minimumSize: Size(200, 50),
-                        backgroundColor: Colors.deepPurpleAccent[200]),
-                  ),
+
+                  InkWell(
+                      onTap: () async {
+                        setState(() {
+                          changeButton = true;
+                        });
+
+                        await Future.delayed(Duration(seconds: 1));
+                        Navigator.pushNamed(context, MyRoutes.HomeRoute);
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        height: 50,
+                        width: changeButton ? 50 : 150,
+                        alignment: Alignment.center,
+                        child: changeButton
+                            ? Icon(
+                                Icons.done,
+                                color: Colors.white,
+                              )
+                            : Text(
+                                "Login",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 18),
+                              ),
+                        decoration: BoxDecoration(
+                          color: (Colors.deepPurple),
+                          shape: changeButton
+                              ? BoxShape.circle
+                              : BoxShape.rectangle,
+                          // borderRadius:
+                          //     BorderRadius.circular(changeButton ? 20 : 8)
+                        ),
+                      ))
+
+                  //ElevatedButton(
+                  //child: Text(
+                  //"LogIn",
+                  //style: TextStyle(fontSize: 20),
+                  //),
+                  //onPressed: () {
+                  //Navigator.pushNamed(context, MyRoutes.HomeRoute);
+                  //},
+                  //style: TextButton.styleFrom(
+                  //minimumSize: Size(200, 50),
+                  //backgroundColor: Colors.deepPurpleAccent[200]),
+                  //),
                 ],
               ),
             ),
