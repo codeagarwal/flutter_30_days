@@ -8,11 +8,19 @@ void main() {
   runApp(MyApp());
 }
 
+String days = "30";
+String name = "Mayank Agarwal";
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        //home: HomePage(),
+
+      home: Material(
+        child: Center(
+          child: Container(
+            child: Text("Welcome to $days Days of Flutter by $name  "),
+          ),     
         themeMode: ThemeMode.light,
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
