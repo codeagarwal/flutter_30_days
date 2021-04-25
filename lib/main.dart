@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepPurple,
           fontFamily: GoogleFonts.aBeeZee().fontFamily,
         ),
-        darkTheme: ThemeData(brightness: Brightness.light),
-        initialRoute: "/",
+        debugShowCheckedModeBanner: false,
+        initialRoute: MyRoutes.HomeRoute,
         routes: {
           "/": (context) => LoginPage(),
           MyRoutes.HomeRoute: (context) => HomePage(),
