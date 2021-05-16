@@ -11,7 +11,7 @@ class Item {
 
 final products = [
   Item(
-      id: "Codepur001",
+      id: "Techbeanz001",
       name: "iPhone 12 Pro",
       desc: "Apple iPhone 12th generation",
       price: 999,
