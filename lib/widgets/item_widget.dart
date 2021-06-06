@@ -16,12 +16,15 @@ class ItemWidget extends StatelessWidget {
           print("${item.name} pressed");
         },
         leading: Image.network(item.image),
-        title: Text("iPhone 12 Pro"),
+        title: Text(item.name),
         subtitle: Text(item.desc),
         trailing: Text(
           "\$${item.price}",
-          style:
-              TextStyle(color: Colors.deepPurple, fontWeight: FontWeight.bold),
+          textScaleFactor: 1.5,
+          style: TextStyle(
+            color: Colors.deepPurple,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
