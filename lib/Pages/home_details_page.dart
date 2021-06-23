@@ -13,7 +13,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -28,8 +28,8 @@ class HomeDetailPage extends StatelessWidget {
                         backgroundColor:
                             MaterialStateProperty.all(MyTheme.darkBluishColor),
                         shape: MaterialStateProperty.all(StadiumBorder())),
-                    child: "Buy".text.xl2.make())
-                .wh(100, 50)
+                    child: "Add to Cart".text.xl2.make())
+                .wh(135, 50)
           ],
         ).p20(),
       ),
@@ -42,27 +42,29 @@ class HomeDetailPage extends StatelessWidget {
               child: Image.network(catalog.image),
             ).h32(context),
             Expanded(
-              child: VxArc(
-                height: 30.0,
-                arcType: VxArcType.CONVEY,
-                edge: VxEdge.TOP,
-                child: Container(
-                  color: Colors.white,
-                  width: context.screenWidth,
-                  child: Column(
-                    children: [
-                      catalog.name.text.xl4
-                          .color(MyTheme.darkBluishColor)
-                          .bold
-                          .make(),
-                      catalog.desc.text.xl
-                          .textStyle(context.captionStyle)
-                          .make(),
-                    ],
-                  ).py64(),
-                ),
+                child: VxArc(
+              height: 30.0,
+              arcType: VxArcType.CONVEY,
+              edge: VxEdge.TOP,
+              child: Container(
+                color: Colors.white,
+                width: context.screenWidth,
+                child: Column(
+                  children: [
+                    catalog.name.text.xl4
+                        .color(MyTheme.darkBluishColor)
+                        .bold
+                        .make(),
+                    catalog.desc.text.xl.textStyle(context.captionStyle).make(),
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At risus viverra adipiscing at in tellus integer feugiat. Quis vel eros donec ac odio tempor."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p16()
+                  ],
+                ).py64(),
               ),
-            )
+            ))
           ],
         ),
       ),
