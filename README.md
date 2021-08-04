@@ -1,5 +1,5 @@
-#flutter_app30days
+# flutter_app30days
 
-A new Flutter application.
+## A new Flutter application.
 
-This is a FlutTer App Challenge. Here you will Find 30 Diffrent Branches and each branch has new progress in code.
+### This is a Flutter App Challenge. Here you will Find 30 Diffrent Branches and each branch has daily progress in code.
