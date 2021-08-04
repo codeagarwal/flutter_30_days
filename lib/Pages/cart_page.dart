@@ -8,7 +8,7 @@ class CartPage extends StatelessWidget {
       backgroundColor: MyTheme.creamColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text("Cart"),
+        title: Text("Cart", style: TextStyle(color: MyTheme.darkcreamColor, fontWeight: FontWeight.w500, fontSize: 20),),
       ),
     );
   }

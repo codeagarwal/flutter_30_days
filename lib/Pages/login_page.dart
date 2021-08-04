@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app30days/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: context.canvasColor,
         child: SingleChildScrollView(
             child: Form(
           key: _formKey,
@@ -49,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple)),
+                      color: context.accentColor)),
               SizedBox(
                 height: 20,
               ),
@@ -74,12 +75,12 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
-                          hintText: "Enter Passward", labelText: "Passward"),
+                          hintText: "Enter Password", labelText: "Password"),
                       validator: (value) {
                         if (value.isEmpty) {
-                          return "Passward cannot be Empty";
+                          return "Password cannot be Empty";
                         } else if (value.length < 6) {
-                          return "Passward Lenght should be atlest 6";
+                          return "Password Length should be at least 6";
                         }
                         return null;
                       },
@@ -88,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 40,
                     ),
                     Material(
-                      color: Colors.deepPurple[400],
+                      color: context.theme.buttonColor,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 20 : 8),
                       child: InkWell(
