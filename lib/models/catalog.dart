@@ -2,11 +2,11 @@ import 'dart:convert';
 
 class CatalogModel {
   // singleTon Class
-  static final catModel = CatalogModel._intenal();
-
-  CatalogModel._intenal();
-
-  factory CatalogModel() => catModel;
+  // static final catModel = CatalogModel._intenal();
+  //
+  // CatalogModel._intenal();
+  //
+  // factory CatalogModel() => catModel;
 
 
   static List<Item> items;
