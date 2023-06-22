@@ -4,10 +4,11 @@ import 'package:flutter_app30days/Pages/home_page.dart';
 import 'package:flutter_app30days/Pages/login_page.dart';
 import 'package:flutter_app30days/utils/routes.dart';
 import 'package:flutter_app30days/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: null, child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

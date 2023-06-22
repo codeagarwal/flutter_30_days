@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 35,
               ),
-              Text("Welcome $name",
+              Text("Welcome",
                   style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,

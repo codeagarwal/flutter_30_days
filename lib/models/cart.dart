@@ -2,11 +2,11 @@ import 'package:flutter_app30days/models/catalog.dart';
 
 class CartModel {
 
-  static final cartModel = CartModel._intenal();
-
-  CartModel._intenal();
-
-  factory CartModel() => cartModel;
+  // static final cartModel = CartModel._intenal();
+  //
+  // CartModel._intenal();
+  //
+  // factory CartModel() => cartModel;
 
   // catalog field
   CatalogModel _catalog;
